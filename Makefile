@@ -3,6 +3,7 @@ IDSFLG          =       -I./include/
 CXXFLAGS	+=	-Wall -Wextra -O2 $(IDSFLG)
 FLAGNAME	=	-o
 NAME		=	frog
+SFMLFLAGS       =       -lsfml-system -lsfml-window -lsfml-graphics
 
 SRC		=	src/core/Core.cpp	\
 			src/core/Board.cpp	\
@@ -19,7 +20,7 @@ TRASH		=	*~
 all		:	$(NAME)
 
 $(NAME)		:	$(OBJ)
-			$(CXX) $(FLAGNAME) $(NAME) $(OBJ)
+			$(CXX) $(FLAGNAME) $(NAME) $(OBJ) $(SFMLFLAGS)
 
 clean		:
 			$(RM) $(OBJ)
