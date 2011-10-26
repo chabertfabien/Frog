@@ -3,12 +3,14 @@
 
 #include	"Graphic.h"
 #include	"Board.h"
+#include	"Enums.h"
 
 class Core
 {
 private:
 	int	score;
 	float	time;
+	int	theCase;
 	int	x;
 	int	y;
 	
@@ -20,7 +22,7 @@ public:
 	Core();
 	~Core();
 	void	launch();
-	void	moveFrog(const int key, const std::vector<std::vector< int> > & map);
+	void	moveFrog(const int key, Board * game);
 	bool	hasLost(const std::vector<std::vector< int> > & map);
 };
 

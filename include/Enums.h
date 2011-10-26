@@ -7,6 +7,7 @@ enum	STUFF
     FROG,
     GRASS,
     ROAD,
+    RAIL,
     WATER,
     NENUPHAR,
     CAR,
@@ -21,12 +22,13 @@ enum	STUFF
     ESCAPE
   };
 
-enum	DIRECTION
+enum	KEY
   {
     LEFT,
     RIGHT,
     UP,
-    DOWN
+    DOWN,
+    END
   };
 
 #endif	/*ENUM_H_*/
