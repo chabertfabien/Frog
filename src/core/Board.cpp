@@ -23,31 +23,57 @@ Board::~Board()
 
 void					Board::initMap()
 {
-  this->map[4][8] = 1;
-  
-  this->map[0][7] = CAR;
-  this->map[4][6] = TRUCKFACE;
-  this->map[3][6] = TRUCKBACK;
-  this->map[0][5] = CAR;
+  int i;
+  for (i = 0; i <= 8; ++i)
+    {
+      this->map[8][i] = GRASS;
+      this->map[0][i] = GRASS;
+    }
 
-  this->map[0][4] = TRAINBACK;
-  this->map[1][4] = TRAINMID;
-  this->map[2][4] = TRAINFACE;
+  for (i = 0; i <= 8; ++i)
+    {
+      this->map[7][i] = ROAD;
+      this->map[6][i] = ROAD;
+      this->map[5][i] = ROAD;
+    }
+
+  for ( i = 0; i <= 8; ++i)
+    {
+      this->map[4][i] = RAIL;
+    }
+
+  for (i = 0; i <= 8; ++i)
+    {
+      this->map[3][i] = WATER;
+      this->map[2][i] = WATER;
+      this->map[1][i] = WATER;
+    }
+
+  this->map[8][4] = FROG;
+  
+  this->map[7][0] = CAR;
+  this->map[6][4] = TRUCKFACE;
+  this->map[6][3] = TRUCKBACK;
+  this->map[5][0] = CAR;
+
+  this->map[4][0] = TRAINBACK;
+  this->map[4][1] = TRAINMID;
+  this->map[4][2] = TRAINFACE;
 
   this->map[3][3] = NENUPHAR;
-  this->map[5][3] = NENUPHAR;
-  this->map[4][3] = NENUPHAR;
+  this->map[3][5] = NENUPHAR;
+  this->map[3][7] = NENUPHAR;
 
-  this->map[1][2] = WOODBACK;
+  this->map[2][1] = WOODBACK;
   this->map[2][2] = WOODMID;
-  this->map[3][2] = WOODFACE;
+  this->map[2][3] = WOODFACE;
 
-  this->map[6][2] = WOODBACK;
-  this->map[7][2] = WOODFACE;
+  this->map[2][6] = WOODBACK;
+  this->map[2][7] = WOODFACE;
 
-  this->map[2][0] = ESCAPE;
-  this->map[4][0] = ESCAPE;
-  this->map[6][0] = ESCAPE;
+  this->map[0][2] = ESCAPE;
+  this->map[0][4] = ESCAPE;
+  this->map[0][6] = ESCAPE;
 }
 
 std::vector<std::vector<int> >		Board::getMap()const
