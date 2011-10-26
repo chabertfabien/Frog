@@ -1,11 +1,10 @@
 #ifndef GRAPHIC_H_
 #define GRAPHIC_H_
 
-#include <SFML/Windows.hpp>
-#include <SFML/Systems.hpp>
-#include <SFML/Graphics.hpp>
-#include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
+#include <SFML/System.hpp>
 #include <SFML/Audio.hpp>
+#include <SFML/Graphics.hpp>
 
 class Graphic
 {
@@ -15,10 +14,10 @@ private:
 
 public:
 	Graphic();
-	~Graphic(){}
-	void	displayScreen(std::vector<std::vector<int> > const & board);
+	~Graphic();
+	void	displayScreen(std::vector<std::vector<int> > const & map);
   	int	getKey()const;
 	//voir comment fonctionne la SFML
-}
+};
 
 #endif	/*GRAPHIC_H_*/
