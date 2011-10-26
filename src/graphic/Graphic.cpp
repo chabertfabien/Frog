@@ -1,4 +1,5 @@
 #include "Graphic.h"
+#include <iostream>
 
 Graphic::Graphic()
 {
@@ -10,18 +11,22 @@ Graphic::~Graphic()
 
 }
 
-void	displayScreen(std::vector<std::vector<int> > const & board)
+void	Graphic::displayScreen(std::vector<std::vector<int> > const & map)
 {
-  for (unsigned int i = 0; i < board[0].size(); ++i)
+  std::cout << "-------------------" << std::endl;
+  for (unsigned int i = 0; i < map[0].size(); ++i)
     {
-      for (unsigned int j = 0; j < board.size(); ++j)
+      std::cout << "|";
+      for (unsigned int j = 0; j < map.size(); ++j)
 	{
-	  std::cout << board[i][j] << std::endl;
+	  std::cout << map[i][j] << "|";
 	}
+      std::cout << std::endl <<  "-------------------" << std::endl;
     }
+  std::cout << std::endl;
 }
 
-int	getKey()const
+int	Graphic::getKey()const
 {
   return (0);
 }
