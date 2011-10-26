@@ -1,10 +1,12 @@
 #include	<iostream>
 #include	"Core.h"
 #include	"Board.h"
-#include	"Graphic.h"
 
-Core::Core(const int & largeur, const int & hauteur, char* const & lib)
-  : x(4), y(8), score(0), time(30.0)
+Core::Core()
+  : x(4),
+    y(8),
+    score(0),
+    time(30.0)
 {
 }
 
@@ -12,35 +14,34 @@ Core::~Core()
 {
 }
 
-bool			Core::has_lost(const Board & board)
+bool			Core::hasLost(const std::vector<std::vector< int> > & map)
 {
-  return (board[this->x][this->y] == 0)
+  return (map[this->x][this->y] == 1);
 }
 
-void			Core::moveFrog(const int & key, Board* game)
+void			Core::moveFrog(const int key, const std::vector<std::vector< int> > & map)
 {
 
 }
 
 
-int			Corey::launch()
+void			Core::launch()
 {
-  Board		game();
+  Board*	game = new Board();
   int		key = 0;
-  Graphic*	graph;
-  float		endwait;
+  Graphic*	graph = new Graphic();
 
-  graph = new Graphic();
-  while (has_lost(game) != 1 && key != -1)
+  game->initMap();
+  while (hasLost(game->getMap()) && key != -1)
     {
-      graph->displayScreen(game.getMap());
+      graph->displayScreen(game->getMap());
       key = graph->getKey();
-      moveFrog(key, &game);
+      moveFrog(key, game->getMap());
     }
   if (key == -1)
     std::cout << "You left the game! Coward!" << std::endl;
   else
     std::cout << "You lost the game!" << std::endl;
-  std::cout << "Your score = " << score.getScore() << "\nLevel = " << score.getLevel() << std::endl;
-  return (0);
+  std::cout << "Your score = " << this->score << std::endl;
+
 }
