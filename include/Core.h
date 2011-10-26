@@ -6,6 +6,8 @@ class Core
 private:
 	int	score;
 	float	time;
+	int	x;
+	int	y;
 	
 private:
 	Core(const Core & other);

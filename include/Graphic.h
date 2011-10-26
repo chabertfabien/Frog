@@ -15,9 +15,9 @@ private:
 
 public:
 	Graphic();
-	virtual ~Graphic(){}
-	virtual void	displayScreen(std::vector<std::vector<int> > const & board) = 0;
-  	virtual int	getKey()const  = 0;
+	~Graphic(){}
+	void	displayScreen(std::vector<std::vector<int> > const & board);
+  	int	getKey()const;
 	//voir comment fonctionne la SFML
 }
 

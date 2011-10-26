@@ -1,38 +1,32 @@
 #ifndef	ENUMS_H_
 #define	ENUMS_H_
 
-enum	eDirection
+enum	STUFF
   {
-    GAUCHE,
-    BAS,
-    DROITE,
-    HAUT
+    EMPTY = 0,
+    FROG,
+    GRASS,
+    ROAD,
+    WATER,
+    NENUPHAR,
+    CAR,
+    TRUCKFACE,
+    TRUCKBACK,
+    TRAINFACE,
+    TRAINMID,
+    TRAINBACK,
+    WOODFACE,
+    WOODMID,
+    WOODBACK,
+    ESCAPE
   };
 
-enum	eSnake
+enum	DIRECTION
   {
-    EMPTY,
-    SNAKEBODY,
-    SNAKEHEAD,
-    FRUIT
+    LEFT,
+    RIGHT,
+    UP,
+    DOWN
   };
-
-#define	KEY_RIGHT	275
-#define	KEY_LEFT	276
-
-typedef		struct	posFruit
-{
-  int		x;
-  int		y;
-}			posFruit;
-
-typedef		struct	posSnake
-{
-  bool		head;
-  int		x;
-  int		y;
-  eDirection	direction;
-
-}			posSnake;
 
 #endif	/*ENUM_H_*/
